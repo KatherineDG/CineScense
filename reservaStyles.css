@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'Cocomat-Light';
+    src: url(fuentes/Cocomat-Light-trial.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(fuentes/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url(fuentes/Montserrat-Bold.ttf);
+}
+
+
+body{
+    background-color: #1D1D23;
+    margin: 0;
+}
+
+main{
+    color: #FFFFFF;
+    margin: 30px 0 30px 0;
+}
+
+.titulo-reserva{
+    font-family: 'Cocomat-Light';
+    font-weight: 900;
+    font-size: 1.5em;
+    margin: 0;
+    background-color: #EF233C;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    width: 60%;
+    text-align: center;
+}
+
+.img-entrada-deco{
+    width: 30%;
+    margin: 10px 0 10px 0;
+}
+
+.contenedor-reserva{
+    display: flex;
+    flex-direction: row;
+    margin: 0 10% 0 10%;
+}
+
+form p{
+    font-family: 'Cocomat-Light';
+    font-weight: bold;
+}
+
+.subtitulo-form-reserva{
+    text-shadow: 0 0 10px #EF233C;
+    font-size: 1.2em;
+    margin-top: 5%;
+}
+
+.contenedor-reserva label{
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8em;
+    margin: 0 10px 0 0;
+}
+
+.contenedor-reserva input{
+    font-family: 'Montserrat-Regular';
+    font-size: 1em;
+    margin: 5px 0 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contenedor-formulario-reserva-datos-personales{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 0 0 0;
+    width: 100%;
+}
+
+.contenedor-distribucion-sala{
+    width: 50%;
+    text-align: center;
+}
+
+.img-pantalla{
+    width: 100%;
+    margin: 0 0 10px 20%;
+}
+
+.contenedor-butacas{
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    gap: 5px;
+}
+.contenedor-butacas div{
+    height: 80px;
+    width: 80px;
+    background-image: url('imagenes/butaca.png');
+    background-size: cover;
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.contenedor-butacas div:hover{
+    background-color: #FFFFFF;
+    color: #1D1D23;
+}
+
+
+.contenedor-metodos-de-pago{
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor-metodos-de-pago img{
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    margin: 0 0 0 5px;
+}
+
+
+#total-reserva{
+    margin-top: 50px;
+    font-family: 'Montserrat-Bold';
+}
+
+
+.btn-reservar{
+    padding: 5% 30px 5% 30px;
+    background-color: #FFFFFF;
+    border: 2px solid #EF233C;
+    border-radius: 10px;
+    font-family: 'Cocomat-Light';
+    font-weight: 900;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.btn-reservar:hover{
+    background-color: #EF233C;
+    color: #FFFFFF;
+}
+
+.contenedor-btn-reservar{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: start;
+}
+
+.img-poster-reserva{
+    width: 30%;
+}
+
+.img-trailer-reserva{
+    width: 65%;
+    height: 25%;
+    margin: 0 0 3% 10px;
+    cursor: pointer;
+}
+
+.titulo-pelicula-reserva{
+    font-family: 'Cocomat-Light';
+    font-weight: 900;
+    color: #EF233C;
+}
+
+.titulo-info-adicional-reserva{
+    font-family: 'Montserrat-Bold';
+    font-size: 0.9em;
+}
+
+.info-adicional-reserva{
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8em;
+}
+
+.sinopsis-reserva{
+    margin: 0 30% 0 0;
+}
+
+#footer
+{
+    width: 100%;
+    background-color: #ef233c;
+    border: 2px solid #ffffff;
+    margin-top: 80px;
+}
+
+.informacion
+{
+    width: 100%;
+    color: #ffffff;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}

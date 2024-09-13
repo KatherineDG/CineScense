@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Cocomat;
+    src: url(fuentes/Cocomat-Light-trial.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(fuentes/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(fuentes/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url(fuentes/Montserrat-Medium.ttf);
+}
+
+body{
+    background-color: #1D1D23;
+}
+
+nav{
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+main{
+    margin: 0 3.5% 5% 3.5%;
+}
+
+.formulario-aclaracion{
+    font-family: 'Montserrat-Medium';
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.formulario-filtros{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    margin: 3% 0 3% 0;
+    font-family: 'Montserrat-Regular';
+}
+
+.formulario-aclaracion{
+    font-family: 'Montserrat-Regular';
+    color: #FFFFFF;
+}
+
+.formulario-filtros div{
+    margin-right: 3%;
+}
+
+.formulario-filtros label{
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: 10px;
+}
+
+.formulario-filtros select{
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.formulario-filtros input{
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-buscar{
+    font-family: 'Montserrat-Medium';
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.btn-buscar:hover{
+    background-color: #EF233C;
+    color: #FFFFFF;
+}
+
+.contenedor-titulo-cartelera{
+    font-family: 'Montserrat-Bold';
+    font-weight: bolder;
+    color: #FFFFFF;
+    margin: 4% 0 4% 0;
+}
+
+.contenedor-titulo-cartelera h1{
+    background-image: url(imagenes/sakd.png);
+    background-repeat: repeat;
+    background-size: contain;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0.3em 0 1.2em 0;
+}
+
+.deco-subtitulo-cartelera{
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #EF233C;
+}
+
+.contenedor-cards-peliculas{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+}
+
+.card-pelicula{
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.card-pelicula:hover{
+    box-shadow:  0 0 10px #EF233C;
+}
+
+.poster-pelicula{
+    display: block;
+    width: 100%;
+    height: 75%;
+    border-radius: 15px 15px 0 0;
+}
+
+.contenedor-info-pelicula{
+    text-align: start;
+}
+
+.estreno-pelicula{
+    background-color: #EF233C;
+    color: #FFFFFF;
+    font-family: 'Montserrat-Bold';
+    margin: 0;
+    padding: 5px;
+}
+
+.titulo-pelicula{
+    font-family: 'Montserrat-Bold';
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+    text-align: center;
+}
+
+.dato-pelicula{
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8em;
+    margin: 1px 0 0 5%;
+    font-weight: 700;
+}
+
+
+
+
+#footer
+{
+    width: 100%;
+    background-color: #ef233c;
+    border: 2px solid #ffffff;
+    margin-top: 80px;
+}
+
+.informacion
+{
+    width: 100%;
+    color: #ffffff;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}

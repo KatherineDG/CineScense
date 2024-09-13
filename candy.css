@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "Cocomat Light-trial";
+    src: url(./fuentes/Cocomat-Light-trial.ttf);
+}
+@font-face {
+    font-family: "Cocomat Ultralight-trial";
+    src: url(./fuentes/CocomatLight-trial.ttf);
+}
+@font-face {
+    font-family: "Anton";
+    src: url(./fuentes/Anton.ttf);
+}
+@font-face {
+    font-family: "Anton-Regular";
+    src: url(./fuentes/Anton-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(./fuentes/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(fuentes/Montserrat-Bold.ttf);
+}
+
+
+
+body 
+{
+    margin: 0 auto;
+    width: 100%;
+    background-color: #1D1D23;
+    
+}
+
+
+
+
+
+#pagina
+{
+    width: 100;
+    background-color: #1D1D23;
+    margin: 2px;
+    border: #1D1D23;
+    margin: 20px;
+}
+
+.encabezado 
+{
+    background-color: #1D1D23;
+    width:100%;
+    border: 5px solid #1D1D23;
+    display: flex;
+    align-items: center;
+}
+
+.botones
+{
+    width:auto; 
+    border: 5px solid #1D1D23;
+    background-color: #1D1D23;
+    display: flex; /**para que cada palabra este al lado de otra **/
+    flex-direction: row; /**para que cada palabra este al lado de otra **/
+    justify-content: space-between;
+    gap: 50px;
+    font-family: "Cocomat Light-trial";
+    font-size: 18px;
+    color: #ffffff;
+    margin-left: 50px;
+}
+
+.botones a /** le saco el subrayado a los botones y le pongo color blanco a las letras **/
+{
+    text-decoration: none; /**none significa nada**/
+    color: #ffffff;
+}
+
+
+
+.contenedor-titulo-candy{
+    font-family: 'Montserrat-Bold';
+    font-weight: bolder;
+    color: #FFFFFF;
+    margin: 4% 0 4% 0;
+}
+
+.contenedor-titulo-candy h1{
+    background-image: url(imagenes/sakd.png);
+    background-repeat: repeat;
+    background-size: contain;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0.3em 0 1.2em 0;
+}
+
+
+
+
+
+
+
+.seccion
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+    font-size: 18px;
+
+}
+
+.secciontipo
+{
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.secciontipo:hover{
+    box-shadow:  0 0 10px #EF233C;
+}
+
+.galeria
+{
+    display: block;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.contenedor-precio
+{
+    text-align: start;
+}
+
+
+
+.precio
+{
+    font-family: 'Montserrat-Bold';
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#footer
+{
+    width: 100%;
+    background-color: #ef233c;
+    border: 2px solid #ffffff;
+    margin-top: 60px;
+}
+
+.informacion
+{
+    width: 100%;
+    margin: 4px;
+    color: #ffffff;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+
+}
