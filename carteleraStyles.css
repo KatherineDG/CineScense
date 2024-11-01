@@ -183,3 +183,22 @@ main{
     font-family: "Montserrat-Regular";
     font-size: 14px;
 }
+
+.contenedor-boton-filtro{
+    text-align: center;
+}
+
+#btn-filtro-personalizado {
+    padding: 1%;
+    font-family: 'Montserrat-Bold';
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid #ef233c;
+    cursor: pointer;
+}
+
+#btn-filtro-personalizado:hover{
+    background-color: #ef233c;
+    border: 5px solid white;
+    color: white;
+}
