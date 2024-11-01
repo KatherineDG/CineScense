@@ -119,6 +119,8 @@ body
     border-radius: 15px;
     cursor: pointer;
     padding-bottom: 10px;
+    text-decoration: none;
+    color: black;
 }
 
 .card-pelicula:hover{

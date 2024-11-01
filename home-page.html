@@ -26,8 +26,17 @@
 
 
         <div id="banner">
-                <a href="./imagenes/carrete.png" target="_blank"> 
-                <img src="./imagenes/carrete.png"> </a> 
+            <div class="carrusel">
+                <img src="./imagenes/carrete1.png">
+                <img src="./imagenes/carrete2.png">
+                <img src="./imagenes/carrete3.png">
+            </div>
+
+            <div class="puntos">
+                <span class="punto active"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+            </div>
         </div>
 
 
@@ -63,7 +72,7 @@
 
 
         <div class="contenedor-cards-peliculas">
-            <div class="card-pelicula">
+            <a class="card-pelicula" href="reserva.html">
                 <img class="poster-pelicula" src="./imagenes/allien.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -72,8 +81,8 @@
                     <p class="dato-pelicula">Género: terror</p>
                     <p class="dato-pelicula">Salas: 2D - 3D - 4D - 5D</p>
                 </div>
-            </div>
-            <div class="card-pelicula">
+            </a>
+            <a class="card-pelicula" href="reserva.html">
                 <img class="poster-pelicula" src="./imagenes/intensamente.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -82,9 +91,9 @@
                     <p class="dato-pelicula">Género: animación</p>
                     <p class="dato-pelicula">Salas: 2D - 3D</p>
                 </div>
-            </div>
+            </a>
         
-            <div class="card-pelicula">
+            <a class="card-pelicula" href="reserva.html">
                 <img class="poster-pelicula" src="./imagenes/iamstill.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -93,8 +102,8 @@
                     <p class="dato-pelicula">Género: realista</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
-            </div>
-            <div class="card-pelicula">
+            </a>
+            <a class="card-pelicula" href="reserva.html">
                 <img class="poster-pelicula" src="./imagenes/romper.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -103,7 +112,7 @@
                     <p class="dato-pelicula">Género: drama</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
-            </div>
+            </a>
 
     </div>
          
@@ -131,6 +140,64 @@
         </div>
 
     </div>
+
+    <script languaje="javascript">
+        const carrusel = document.querySelector('.carrusel'); //selecciono el elemento con clase "carrusel"
+        const imagenes = carrusel.querySelectorAll('img'); //selecciona todos los elementos 'img' en el carrusel
+        const puntos = document.querySelectorAll('.punto'); //selecciona todos los elementos con clase "punto"
+        var indiceImagen = 0; //inicializo el índice de la imágen actual en 0
+
+        function mostrarImagenActual () //función para mostrar la imágen actual
+        {
+            for (let i = 0; i < imagenes.length; i++) //recorro todas las imágenes dentro del carrusel
+            {
+                imagenes[i].style.display='none'; //oculto todas la imágenes, para que solo muestre la imágen actual seleccionada
+            }
+
+            for (let i = 0; i< puntos.length; i++) //recorro todos los puntos dentro del carrusel
+            {
+                puntos[i].classList.remove('active'); //elimino la clase active de todos los puntos para reestablecer el estado de 
+                //los puntos y preparar el punto correspondiente a la imágen actual
+            }
+
+            imagenes[indiceImagen].style.display='block'; //muestra la imágen actual
+            puntos[indiceImagen].classList.add('active'); //agrego la clase active active al punto correspondiente
+        }
+
+        function pasarSiguiente() 
+        {
+            indiceImagen ++; //incremento el índice de la imágen actual
+            if (indiceImagen >= imagenes.length) //si se llega al final de las imágenes vuelve al principio
+            {
+                indiceImagen = 0;
+            }
+            else if (indiceImagen < 0) //si se va hacia atras va hasta el final de las imágenes
+            {
+                indiceImagen = imagenes.length -1;
+            }
+            mostrarImagenActual(); //muestra la imágen actual llamando a la función antes hecha
+        }
+
+        function iniciarCarrusel ()
+        {
+            setInterval (pasarSiguiente, 4000); //llamo a la función 'pasarSiguiente' cada 5 segundos para que cambien las imágenes
+        }
+
+        for (let i = 0; i < puntos.length; i++) //agrego un click para c/punto
+        {
+            puntos[i].addEventListener('click', function()
+            {
+                indiceImagen = i; //establesco un indice para la imagen actual según el punto en el que hago click
+                mostrarImagenActual(); //muestro imágen actual
+            });
+        }
+
+        
+        //iniciamos el carrusel y se muestra la primer imágen
+        iniciarCarrusel();
+        mostrarImagenActual();
+
+    </script>
     
 </body>
 </html> 

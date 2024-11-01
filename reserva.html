@@ -69,9 +69,9 @@
                         <div class="contenedor-metodos-de-pago">
                             <input type="radio" name="metodopago" value="efectivo"  onclick="descontar()">
                             <label><img src="imagenes/efectivo.png"> 50% de descuento</label>
-                            <input type="radio" name="metodopago" value="mp">
+                            <input type="radio" name="metodopago" value="mp" onclick="nodescontar()">
                             <label><img src="imagenes/mercadopago.png"></label>
-                            <input type="radio" name="metodopago" value="tarjeta">
+                            <input type="radio" name="metodopago" value="tarjeta" onclick="nodescontar()">
                             <label><img src="imagenes/mastercard.png"></label>
                         </div>
                     </div>
@@ -140,6 +140,12 @@
             precioConDescuento = butacasSeleccionadas.length * precioEntrada * 0.5
             document.getElementById('total-reserva-descuento').innerText = 'Total con descuento: ' + precioConDescuento;
             document.getElementById('total-reserva').style.textDecoration = 'line-through'
+        }
+
+        function nodescontar() {
+            precioConDescuento = butacasSeleccionadas.length * precioEntrada
+            document.getElementById('total-reserva-descuento').innerText = ''
+            document.getElementById('total-reserva').style.textDecoration = 'none'
         }
 
         document.querySelector('form').addEventListener('submit', function(event) {
