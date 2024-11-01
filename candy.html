@@ -35,30 +35,37 @@
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/bebida1.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $3.500 </p>
+                    <p class="nombre-producto">Coca Cola</p>
+                    <p class="precio"> $3500 </p>
                 </div>
-                <button>aajk</button>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/bebida2.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $3.500 </p>
+                    <p class="nombre-producto">Fanta</p>
+                    <p class="precio"> $3500 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/bebida3.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $2.500 </p>
+                    <p class="nombre-producto">Jugo Citric Naranja</p>
+                    <p class="precio"> $2500 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/bebida4.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $3.000 </p>
+                    <p class="nombre-producto">Agua Sin Gas Villavicencia</p>
+                    <p class="precio"> $3000 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
         </div>
 
@@ -72,29 +79,37 @@
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/comida1.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $5.000 </p>
+                    <p class="nombre-producto">Pochoclos</p>
+                    <p class="precio"> $5000 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/comida 2.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $5.500 </p>
+                    <p class="nombre-producto">Nachos Macritas</p>
+                    <p class="precio"> $5500 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/comida3.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $4.000 </p>
+                    <p class="nombre-producto">Pancho</p>
+                    <p class="precio"> $4000 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/comida4.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $5.500 </p>
+                    <p class="nombre-producto">Papas Fritas con Aderezo</p>
+                    <p class="precio"> $5500 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
         </div>
 
@@ -109,30 +124,44 @@
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/combo1.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $13.500 </p>
+                    <p class="nombre-producto">Dos Gaseosas + Dos Valdes de Pochoclos chicos</p>
+                    <p class="precio"> $13500 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/combo2.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $8.000 </p>
+                    <p class="nombre-producto">Gaseosa + Nachos</p>
+                    <p class="precio"> $8000 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/combo3.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $9.800 </p>
+                    <p class="nombre-producto">Pancho + Papas Fritas + Jugo</p>
+                    <p class="precio"> $9800 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
 
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/combo4.png">
                 <div class="contenedor-precio">
-                    <p class="precio"> $7.000 </p>
+                    <p class="nombre-producto">Gasseosa + Pancho + Alfajor</p>
+                    <p class="precio"> $7000 </p>
                 </div>
+                <button class="agregar-carrito">Agregar al Carrito</button>
             </a>
+        </div>
+
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p id="total-carrito"></p>
         </div>
 
 
@@ -171,5 +200,63 @@
         </div>
 
     </div>
+
+    <script language="javascript">
+        var carrito = [];
+        var botonCarrito = document.getElementsByClassName('agregar-carrito');
+
+        for (var i = 0; i < botonCarrito.length; i++)
+        {
+            botonCarrito[i].addEventListener('click', function(event)
+            {
+                var boton = event.target;
+                var nombre = this.parentNode.querySelector ('.nombre-producto').textContent;
+                var precio = parseFloat(this.parentNode.querySelector ('.precio').textContent.replace('$', ''));
+                console.log(precio);
+
+                agregarAlCarrito(nombre, precio);
+            }
+        )
+        }
+        
+        function agregarAlCarrito (nombre, precio)
+        {
+            carrito.push({nombre: nombre, precio: precio});
+            console.log(carrito)
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito ()
+        {
+            var listaCarrito = document.getElementById('lista-carrito');
+            var totalCarrito = document.getElementById('total-carrito');
+
+            var total= 0;
+
+            listaCarrito.innerHTML = '';
+
+            for (var i = 0; i < carrito.length; i++ )
+          {
+            var elemento = document.createElement('li');
+            elemento.textContent = carrito[i].nombre + '-' + carrito[i].precio;
+            listaCarrito.appendChild(elemento);
+            total += carrito[i].precio;
+          }
+
+          totalCarrito.textContent = 'Total a pagar: ' + total.toFixed(2);
+        }
+
+        document.getElementById('carrito').addEventListener('click', function()
+        {
+            var mensaje = 'Tu carrito:';
+            for (var i = 0; i < carrito.length; i++)
+            {
+                mensaje += carrito[i].nombre + ' - ' + carrito[i].precio + ', ' ;
+            }
+            mensaje += document.getElementById('total-carrito').textContent;
+            alert(mensaje);
+        }
+        )
+    </script>
 
 </body>

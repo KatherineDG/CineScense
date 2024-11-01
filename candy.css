@@ -147,10 +147,49 @@ body
     text-align: center;
 }
 
+.nombre-producto
+{
+    font-family: 'Montserrat-Bold';
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+    text-align: center;
+}
 
 
+#carrito
+{
+    position:fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 
+#carrito h2
+{
+    margin-top: 0;
+}
+
+#lista-carrito
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-carrito li
+{
+    margin-bottom: 10px;
+}
+
+#total-carrito
+{
+    font-weight: bold;
+}
 
 
 
