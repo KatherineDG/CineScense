@@ -36,6 +36,10 @@ main{
     text-align: center;
 }
 
+.precio-entrada{
+    font-family: 'Montserrat-Bold';
+}
+
 .img-entrada-deco{
     width: 30%;
     margin: 10px 0 10px 0;
@@ -132,6 +136,10 @@ form p{
     font-family: 'Montserrat-Bold';
 }
 
+#total-reserva-descuento{
+    font-family: 'Montserrat-Bold';
+}
+
 
 .btn-reservar{
     padding: 5% 30px 5% 30px;
@@ -158,13 +166,6 @@ form p{
 
 .img-poster-reserva{
     width: 30%;
-}
-
-.img-trailer-reserva{
-    width: 65%;
-    height: 25%;
-    margin: 0 0 3% 10px;
-    cursor: pointer;
 }
 
 .titulo-pelicula-reserva{
