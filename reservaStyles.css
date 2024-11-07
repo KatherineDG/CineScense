@@ -203,3 +203,68 @@ form p{
     font-family: "Montserrat-Regular";
     font-size: 14px;
 }
+
+@media (max-width: 700px) {
+    /* Ajusta la dirección del contenedor principal a columnas para dispositivos móviles */
+    main{
+        margin: 2% 5% 0 0;
+    }
+    .contenedor-reserva {
+        flex-direction: column;
+
+    }
+
+    .titulo-reserva {
+        width: 100%;
+    }
+
+    /* Acomoda el formulario y la información de la película */
+    .contenedor-formulario-reserva,
+    .contenedor-informacion-pelicula-reserva {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Ajusta el tamaño de los títulos y el botón de reserva */
+    .titulo-reserva {
+        font-size: 1.2em;
+        width: 100%;
+    }
+
+    .contenedor-formulario-reserva input {
+        width: 100%;
+    }
+
+    .contenedor-btn-reservar button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Redimensiona las imágenes */
+    .img-entrada-deco {
+        width: 60%;
+    }
+
+    .img-poster-reserva {
+        width: 100%;
+        height: auto;
+    }
+
+    video{
+        width: 100%;
+        height: auto;
+    }
+
+    /* Acomoda la distribución de butacas en filas únicas */
+    .contenedor-butacas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    /* Ajuste del footer */
+    footer .informacion {
+        font-size: 0.8em;
+        padding: 5px;
+    }
+}
