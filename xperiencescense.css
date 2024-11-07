@@ -96,6 +96,11 @@ body
     padding: 0.3em 0 1.2em 0;
 }
 
+.ocultar
+{
+    display: none;
+}
+
 
 
 
@@ -120,7 +125,7 @@ body
     font-size: 18px;
     background-color: #ef233c;
     border: 2px solid #ef233c;
-    margin-top: 20px;
+    margin-top: 0px;
     display: flex; 
     flex-direction: row; 
     justify-content: space-between;
@@ -128,13 +133,15 @@ body
     align-items: center;
     text-decoration: none;
     color: #FFFFFF;
-    gap: 20px;
     font-family: "Montserrat-Regular";
+    box-sizing: border-box;
 }
 
 .tiposalaA img{
     width: 600px;
     height: auto;
+    margin: 0 auto;
+    transition: transform 0.5s;
 }
 
 
@@ -145,7 +152,7 @@ body
     font-size: 18px;
     background-color: #ffffff;
     border: 2px solid #ffffff;
-    margin-top: 20px;
+    margin-top: 0px;
     display: flex; 
     flex-direction: row; 
     justify-content: space-between;
@@ -153,13 +160,63 @@ body
     align-items: center;
     text-decoration: none;
     color: #1D1D23;
-    gap: 20px;
     font-family: "Montserrat-Regular";
+    box-sizing: border-box;
 }
 
 .tiposalaB img{
     width: 600px;
     height: auto;
+    margin: 0 auto;
+}
+
+.titulo-salasA
+{
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    background-color: #ef233c;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Montserrat-Regular";
+    margin-bottom: 0;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.titulo-salasB
+{
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    background-color: #FFFFFF;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #1D1D23;
+    font-family: "Montserrat-Regular";
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.tiposalaA, .tiposalaB
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiposalaA img, .tiposalaB img
+{
+    transition: margin 0,5s;
+}
+
+.tiposalaA p, .tiposalaB p
+{
+    padding: 10px;
 }
 
 
@@ -173,11 +230,30 @@ body
 }
 
 .informacion
-{
+{ 
     width: 100%;
     margin: 4px;
     color: #ffffff;
     font-family: "Montserrat-Regular";
     font-size: 14px;
 
+}
+
+@media (max-width: 700px) {
+    .tiposalaA, .tiposalaB{
+        display: flex;
+        flex-direction: column;
+        width: 10%;
+        height: 10%;
+    }
+
+    .tiposalaA img{
+        width: 350px;
+        height: 200px;
+        margin: 0px 0px 0px 350px;
+    }
+
+    .ocultar{
+        width: 100%;
+    }
 }

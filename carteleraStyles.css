@@ -169,12 +169,11 @@ main{
 
 
 
-#footer
-{
+#footer{
     width: 100%;
     background-color: #ef233c;
     border: 2px solid #ffffff;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .informacion
@@ -207,15 +206,18 @@ main{
 /* Media query para dispositivos móviles */
 @media (max-width: 700px) {
 
+
     main{
         margin-top: 20px;
     }
-    /* Ajustes en el formulario para que se vea mejor en pantallas pequeñas */
+
     .formulario-filtros {
+        display: flex;
         flex-direction: column;
         align-items: start;
         font-size: small;
         gap: 10px;
+        margin-bottom: 30px;
     }
 
     .pelicula-buscar{
@@ -225,30 +227,26 @@ main{
     }
 
     .btn-buscar{
-        margin-left: 5px
+        margin-left: 5px;
     }
 
     #btn-filtro-personalizado {
         font-size: small;
+        margin-bottom: 30px;
     }
 
     .contenedor-cards-peliculas {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(1, 1fr);
         margin-left: 20px;
     }
 
-    #alienromulus, #spidermanacrossthespideruniverse, #deadpoolywolverine, #romperelcirculo{
+    #alienromulus, #spidermanacrossthespideruniverse, #deadpoolywolverine, #romperelcirculo, #intensamentedos, #iamstilljk, #avatarelsentidodelagua, #killmasacreeneltren{
         grid-column: 1;
     }
 
-    #intensamentedos, #iamstilljk, #avatarelsentidodelagua, #killmasacreeneltren{
-        grid-column: 2;
-    }
-
     .card-pelicula{
-        width: 12.5em;
+        width: 20em;
     }
 
 }

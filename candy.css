@@ -102,13 +102,36 @@ body
 
 
 
-.seccion
+.seccion-bebidas
 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5%;
     font-size: 18px;
 
+}
+
+.seccion-comidas
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+    font-size: 18px;
+
+}
+
+.seccion-combos
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+    font-size: 18px;
+
+}
+
+.ocultar
+{
+    display: none;
 }
 
 .secciontipo
@@ -120,6 +143,7 @@ body
     text-decoration: none;
     color: black;
 }
+
 
 .secciontipo:hover{
     box-shadow:  0 0 10px #EF233C;
@@ -192,11 +216,6 @@ body
 }
 
 
-
-
-
-
-
 #footer
 {
     width: 100%;
@@ -213,4 +232,49 @@ body
     font-family: "Montserrat-Regular";
     font-size: 14px;
 
+}
+
+
+@media (max-width: 700px) {
+
+    .logo{
+        height: 70px;
+        width: 70px;
+    }
+
+    .encabezado 
+    {
+        display: grid;
+        align-items: center;
+        margin-bottom: 120px;
+        text-align: center;
+    }
+
+    .botones{
+        display: flex;
+        gap: 5px;
+        margin-left: 0;
+        font-size: medium;
+        justify-content: center;
+    }
+
+    #carrito{
+        position: absolute;
+        top: 150px;
+        left: 20px;
+    }
+
+    #bebidas{
+        margin: 30% 0 0 0;
+    }
+
+
+    .seccion-bebidas, .seccion-comidas, .seccion-combos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .secciontipo{
+        margin: 3% 8% 3% 8%;
+    }
 }

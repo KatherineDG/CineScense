@@ -3,8 +3,10 @@
 
 <head>
     <link rel="StyleSheet" href="candy.css" type="text/css">
+    <link rel="StyleSheet" href="home-page.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -26,12 +28,12 @@
         </div>
 
 
-        <div class="contenedor-titulo-candy">
+        <div class="contenedor-titulo-candy" id="bebidas">
             <h1>BEBIDAS</h1>
         </div>
 
 
-        <div class="seccion">
+        <div class="seccion-bebidas ocultar">
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/bebida1.png">
                 <div class="contenedor-precio">
@@ -70,12 +72,12 @@
         </div>
 
 
-        <div class="contenedor-titulo-candy">
+        <div class="contenedor-titulo-candy" id="comida">
             <h1>COMIDA</h1>
         </div>
 
 
-        <div class="seccion">
+        <div class="seccion-comidas ocultar">
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/comida1.png">
                 <div class="contenedor-precio">
@@ -115,12 +117,12 @@
 
 
 
-        <div class="contenedor-titulo-candy">
+        <div class="contenedor-titulo-candy" id="combos">
             <h1>COMBOS</h1>
         </div>
 
 
-        <div class="seccion">
+        <div class="seccion-combos ocultar">
             <a class="secciontipo">
                 <img class="galeria" src="imagenes/combo1.png">
                 <div class="contenedor-precio">
@@ -202,61 +204,102 @@
     </div>
 
     <script language="javascript">
-        var carrito = [];
-        var botonCarrito = document.getElementsByClassName('agregar-carrito');
+        var carrito = []; //creo un carrito vacío para almacenar los productos 
+        var botonCarrito = document.getElementsByClassName('agregar-carrito'); //botones que permiten agregar productos al carrito
+        var margenCandy = 90;
 
-        for (var i = 0; i < botonCarrito.length; i++)
+        for (var i = 0; i < botonCarrito.length; i++) //inicio un bucle for para iterar sobre cada botón con la clase agregar-carrito
         {
-            botonCarrito[i].addEventListener('click', function(event)
+            botonCarrito[i].addEventListener('click', function(event) //agrego un evento click a cada botón, para agregar el producto al carrito
             {
-                var boton = event.target;
-                var nombre = this.parentNode.querySelector ('.nombre-producto').textContent;
-                var precio = parseFloat(this.parentNode.querySelector ('.precio').textContent.replace('$', ''));
-                console.log(precio);
+                var boton = event.target; //almaceno el botón que se clicó en la variable boton
+                var nombre = this.parentNode.querySelector ('.nombre-producto').textContent; //busco el elemento con la clase nombre-producto dentro del mismo contenedor del botón y obtengo su contenido de texto (nombre del producto)
+                var precio = parseFloat(this.parentNode.querySelector ('.precio').textContent.replace('$', '')); //obtengo el precio del producto y lo convierto en número flotante. Elimino el símbolo de dólar
+                console.log(precio); 
 
-                agregarAlCarrito(nombre, precio);
+                agregarAlCarrito(nombre, precio); //llamo a la función agregarAlCarrito con el nombre y el precio del producto
             }
         )
         }
         
         function agregarAlCarrito (nombre, precio)
         {
-            carrito.push({nombre: nombre, precio: precio});
+            carrito.push({nombre: nombre, precio: precio}); //añado un objeto con las propiedades nombre y precio al carrito
             console.log(carrito)
-            actualizarCarrito();
+            
+            const contenedorBebidas = document.getElementById('bebidas');
+            margenCandy = margenCandy + 90;
+            contenedorBebidas.style.marginTop = margenCandy + 'px'
+
+            actualizarCarrito(); //llamo a la función actualizarCarrito para mostrar los cambios en el carrito
         }
 
         function actualizarCarrito ()
         {
-            var listaCarrito = document.getElementById('lista-carrito');
-            var totalCarrito = document.getElementById('total-carrito');
+            var listaCarrito = document.getElementById('lista-carrito'); //selecciono el elemento con el ID lista-carrito (donde se mostrará la lista de productos)
+            var totalCarrito = document.getElementById('total-carrito'); //selecciono el elemento con el ID total-carrito (donde se mostrará el total a pagar)
 
-            var total= 0;
+            var total= 0; //para acumular el precio de todos los productos en el carrito
 
-            listaCarrito.innerHTML = '';
+            listaCarrito.innerHTML = ''; //vaciamos el contenido HTML de listaCarrito para evitar duplicar productos en pantalla
 
-            for (var i = 0; i < carrito.length; i++ )
+            for (var i = 0; i < carrito.length; i++ ) //para recorrer cada producto en el carrito
           {
-            var elemento = document.createElement('li');
-            elemento.textContent = carrito[i].nombre + '-' + carrito[i].precio;
-            listaCarrito.appendChild(elemento);
-            total += carrito[i].precio;
+            var elemento = document.createElement('li'); //creo un nuevo elemento de lista ('li') y le asigno el nombre y precio del producto actual
+            elemento.textContent = carrito[i].nombre + ': ' + carrito[i].precio;
+            listaCarrito.appendChild(elemento); //agrego el elemento de lista al contenedor listaCarrito
+            total += carrito[i].precio; //sumo el precio del producto actual al total
           }
 
-          totalCarrito.textContent = 'Total a pagar: ' + total.toFixed(2);
+          totalCarrito.textContent = 'Total a pagar: ' + total.toFixed(2); //actualizo el texto del totalCarrito para mostrar el total, redondeado a dos decimales
         }
 
-        document.getElementById('carrito').addEventListener('click', function()
+        document.getElementById('carrito').addEventListener('click', function() //agrego un evento click al elemento con ID carrito para mostrar el contenido del carrito en una alerta cuando se hace click en él
         {
-            var mensaje = 'Tu carrito:';
-            for (var i = 0; i < carrito.length; i++)
+            var mensaje = 'Tu carrito 🡪 ';
+            for (var i = 0; i < carrito.length; i++) //recorro el carrito para agregar cada producto al mensaje
             {
-                mensaje += carrito[i].nombre + ' - ' + carrito[i].precio + ', ' ;
+                mensaje += carrito[i].nombre + ': ' + carrito[i].precio + ', ' ; //añado el nombre y precio de cada producto al mensaje 
             }
-            mensaje += document.getElementById('total-carrito').textContent;
-            alert(mensaje);
+            mensaje += document.getElementById('total-carrito').textContent; //añado el total al mensaje
+            alert(mensaje); //muestro el contenido del carrito con un alert
         }
         )
+
+        $(document).ready(function() //creo función para que al apretar el título de Bebida, Comida o Combo aparezcan las opciones.
+                                     //y si volvemos a hacer clic se ocultan
+        {
+            $("#bebidas").click(function() {
+                var seccion = $(".seccion-bebidas");
+                if (seccion.hasClass("ocultar")) { //si tiene la caracteristica de ocultar borro la misma y hago un slideDown. Esto es para que la primera vez que hago clic no se abra y cierre solo.
+                    seccion.removeClass("ocultar").slideDown();
+                } 
+                else {
+                    seccion.slideToggle(); 
+                }
+            });
+            
+            $("#comida").click(function() {
+                var seccion = $(".seccion-comidas");
+                if (seccion.hasClass("ocultar")) {
+                    seccion.removeClass("ocultar").slideDown();
+                } 
+                else {
+                    seccion.slideToggle();
+                }
+            });
+            
+            $("#combos").click(function() {
+                var seccion = $(".seccion-combos");
+                if (seccion.hasClass("ocultar")) {
+                    seccion.removeClass("ocultar").slideDown();
+                }
+                else {
+                    seccion.slideToggle();
+                }
+            });
+        });
+
     </script>
 
 </body>

@@ -42,37 +42,15 @@
 
 
         <div id="buscar">
-            <form id="buscar_lugar"> <label for="lugar"> Seleccione un Cine Scense: </label>
-            <select id="lugar" name="lugar"> 
-                <option value="Seleccione un cine:" style="font-family: Montserrat-Regular;"> Seleccione un cine: </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Belgrano </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Caballito </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Palermo </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Recoleta </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Cordoba </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Misiones </option>
-                <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Cine Scence Santa Fé </option>
-            </select> 
-            </form>
-
-            <form id="buscar_pelicula"> <label for="pelicula" style="font-family: Montserrat-Regular;"> Seleccione una Película: </label>
-                <select id="pelicula" name="pelicula">
-                    <option value="Seleccione una Película:" style="font-family: Montserrat-Regular;"> Seleccione una Película: </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Intensamente 2 </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Mi Villano Favorito 4 </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Romper el círculo </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Mi amigo el Pinguino </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Alien Romulus </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Deadpool y Wolverine </option>
-                    <option value="Cine Scence Recoleta" style="font-family: Montserrat-Regular;"> Kill: Masacre en el tren </option>
-                </select> 
-            </form>
+            <div class="contenedor-boton-filtro">
+                <button id="btn-filtro-personalizado">¡Encontrá más rápido lo que queres ver!</button>
+            </div>
         </div>
 
 
 
         <div class="contenedor-cards-peliculas">
-            <a class="card-pelicula" href="reserva.html">
+            <div class="card-pelicula" id="alienromulus">
                 <img class="poster-pelicula" src="./imagenes/allien.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -81,8 +59,8 @@
                     <p class="dato-pelicula">Género: terror</p>
                     <p class="dato-pelicula">Salas: 2D - 3D - 4D - 5D</p>
                 </div>
-            </a>
-            <a class="card-pelicula" href="reserva.html">
+            </div>
+            <div class="card-pelicula" id="intensamentedos">
                 <img class="poster-pelicula" src="./imagenes/intensamente.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -91,9 +69,9 @@
                     <p class="dato-pelicula">Género: animación</p>
                     <p class="dato-pelicula">Salas: 2D - 3D</p>
                 </div>
-            </a>
+            </div>
         
-            <a class="card-pelicula" href="reserva.html">
+            <div class="card-pelicula" id="iamstilljk">
                 <img class="poster-pelicula" src="./imagenes/iamstill.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
@@ -102,14 +80,58 @@
                     <p class="dato-pelicula">Género: realista</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
-            </a>
-            <a class="card-pelicula" href="reserva.html">
+            </div>
+            <div class="card-pelicula" id="romperelcirculo">
                 <img class="poster-pelicula" src="./imagenes/romper.png">
                 <p class="estreno-pelicula">ESTRENO</p>
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">ROMPER EL CIRCULO</p>
                     <p class="dato-pelicula">Duración: 130 minutos</p>
                     <p class="dato-pelicula">Género: drama</p>
+                    <p class="dato-pelicula">Salas: 2D</p>
+                </div>
+            </div>
+
+            <a class="card-pelicula" id="spidermanacrossthespideruniverse">
+                <img class="poster-pelicula" src="imagenes/spidermanacrossthespideruniverse.jpg">
+                <p class="estreno-pelicula">ESTRENO</p>
+                <div class="contenedor-info-pelicula">
+                    <p class="titulo-pelicula">SPIDER-MAN: ATSV</p>
+                    <p class="dato-pelicula">Duración: 140 minutos</p>
+                    <p class="dato-pelicula">Género: animación</p>
+                    <p class="dato-pelicula">Salas: 2D - 3D - 4D</p>
+                </div>
+            </a>
+
+            <a class="card-pelicula" id="deadpoolywolverine">
+                <img class="poster-pelicula" src="imagenes/deadpoolywolverine.png">
+                <p class="estreno-pelicula">ESTRENO</p>
+                <div class="contenedor-info-pelicula">
+                    <p class="titulo-pelicula">DEADPOOL & WOLVERINE</p>
+                    <p class="dato-pelicula">Duración: 127 minutos</p>
+                    <p class="dato-pelicula">Género: accion</p>
+                    <p class="dato-pelicula">Salas: 2D - 3D</p>
+                </div>
+            </a>
+
+            <a class="card-pelicula" id="avatarelsentidodelagua">
+                <img class="poster-pelicula" src="imagenes/avatarelsentidodelagua.png">
+                <p class="estreno-pelicula">ESTRENO</p>
+                <div class="contenedor-info-pelicula">
+                    <p class="titulo-pelicula">AVATAR 2</p>
+                    <p class="dato-pelicula">Duración: 192 minutos</p>
+                    <p class="dato-pelicula">Género: fantasia</p>
+                    <p class="dato-pelicula">Salas: 2D - 3D - 4D - 5D</p>
+                </div>
+            </a>
+
+            <a class="card-pelicula" id="killmasacreeneltren">
+                <img class="poster-pelicula" src="imagenes/kill.png">
+                <p class="estreno-pelicula">ESTRENO</p>
+                <div class="contenedor-info-pelicula">
+                    <p class="titulo-pelicula">KILL MASACRE EN EL TREN</p>
+                    <p class="dato-pelicula">Duración: 115 minutos</p>
+                    <p class="dato-pelicula">Género: acción</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
             </a>
@@ -141,7 +163,175 @@
 
     </div>
 
-    <script languaje="javascript">
+    <script language="javascript">
+
+        const cards = document.querySelectorAll('.contenedor-cards-peliculas .card-pelicula');
+        for (var i=0; i<cards.length; i++)
+    {
+        if (i>=4)
+    {
+        cards[i].style.display='none';
+    }
+    }
+
+    function filtrar() {
+            lugar = parseInt(prompt("Ingresa el número de la sede del cine: \n 1. Av. Lima \n 2. Av. Independencia \n 3. Av. Salta \n 4. Av. Chile"))
+
+            switch (true) {
+                case (lugar === 1): { //Terror
+                    break;
+                }
+                case (lugar === 2): { //Animacion
+                    break;
+                }
+                case (lugar === 3): { //Realista
+                    break;
+                }
+                case (lugar === 4): { //Accion
+                    break;
+                }
+                default: {
+                    alert("Ingreso erróneo, vuelva a intentarlo")
+                    return
+                }
+            }
+            
+            genero = parseInt(prompt("Ingresá el número del género que te interese: \n 1. Terror \n 2. Animación \n 3. Realista \n 4. Acción \n 5. Fantasía \n 6. Drama"))
+
+            switch (true) {
+                case (genero === 1): { //Terror
+                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de terror que querés ver: \n 1. Alien Romulus"))
+                    break;
+                }
+                case (genero === 2): { //Animacion
+                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de animación que querés ver: \n 2. Intesamente 2 \n 3. Spider Man ATSV"))
+                    break;
+                }
+                case (genero === 3): { //Realista
+                    pelicula = parseInt(prompt("Ingresa el número de la pelicula realista que querés ver: \n 4. I still you JK"))
+                    break;
+                }
+                case (genero === 4): { //Accion
+                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de acción que querés ver: \n 5. Deadpool & Wolverine \n 6. Kill Masacre en el tren"))
+                    break;
+                }
+                case (genero === 5): { //Fantasia
+                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de fantasía que querés ver: \n 7. Avatar 2"))
+                    break;
+                }
+                case (genero === 6): { //Drama
+                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de drama que querés ver: \n 8. Romper el círculo"))
+                    break;
+                }
+                default: {
+                    alert("Ingreso erróneo, vuelva a intentarlo")
+                    return;
+                }
+            }
+ 
+            // Peliculas
+            const alienromulus = document.getElementById('alienromulus')
+            const intensamentedos = document.getElementById('intensamentedos')
+            const spidermanacrossthespideruniverse = document.getElementById('spidermanacrossthespideruniverse')
+            const iamstilljk = document.getElementById('iamstilljk')
+            const deadpoolywolverine = document.getElementById('deadpoolywolverine')
+            const avatarelsentidodelagua = document.getElementById('avatarelsentidodelagua')
+            const romperelcirculo = document.getElementById('romperelcirculo')
+            const killmasacreeneltren = document.getElementById('killmasacreeneltren')
+
+            // Dependiendo las elecciones escondo las peliculas que no se eligieron (hidden = true)
+            if (genero === 1 && pelicula === 1) {
+                intensamentedos.hidden = true
+                spidermanacrossthespideruniverse.hidden = true
+                iamstilljk.hidden = true
+                deadpoolywolverine.hidden = true
+                avatarelsentidodelagua.hidden = true
+                romperelcirculo.hidden = true
+                killmasacreeneltren.hidden = true
+            }
+            else if (genero === 2) {
+                if (pelicula === 2) {
+                    alienromulus.hidden = true
+                    spidermanacrossthespideruniverse.hidden = true
+                    iamstilljk.hidden = true
+                    deadpoolywolverine.hidden = true
+                    avatarelsentidodelagua.hidden = true
+                    romperelcirculo.hidden = true
+                    killmasacreeneltren.hidden = true
+                }
+                else if (pelicula === 3) {
+                    alienromulus.hidden = true
+                    intensamentedos.hidden = true
+                    iamstilljk.hidden = true
+                    deadpoolywolverine.hidden = true
+                    avatarelsentidodelagua.hidden = true
+                    romperelcirculo.hidden = true
+                    killmasacreeneltren.hidden = true
+                }
+            }
+            else if (genero === 3 && pelicula === 4) {
+                alienromulus.hidden = true
+                intensamentedos.hidden = true
+                spidermanacrossthespideruniverse.hidden = true
+                deadpoolywolverine.hidden = true
+                avatarelsentidodelagua.hidden = true
+                romperelcirculo.hidden = true
+                killmasacreeneltren.hidden = true
+            }
+            else if (genero === 4) {
+                if (pelicula === 5) {
+                    alienromulus.hidden = true
+                    intensamentedos.hidden = true
+                    spidermanacrossthespideruniverse.hidden = true
+                    iamstilljk.hidden = true
+                    avatarelsentidodelagua.hidden = true
+                    romperelcirculo.hidden = true
+                    killmasacreeneltren.hidden = true
+                }
+                else if (pelicula === 6) {
+                    alienromulus.hidden = true
+                    intensamentedos.hidden = true
+                    spidermanacrossthespideruniverse.hidden = true
+                    iamstilljk.hidden = true
+                    deadpoolywolverine.hidden = true
+                    avatarelsentidodelagua.hidden = true
+                    romperelcirculo.hidden = true
+                }
+            }
+            else if (genero === 5 && pelicula === 7) {
+                alienromulus.hidden = true
+                intensamentedos.hidden = true
+                spidermanacrossthespideruniverse.hidden = true
+                iamstilljk.hidden = true
+                deadpoolywolverine.hidden = true
+                romperelcirculo.hidden = true
+                killmasacreeneltren.hidden = true
+            }
+            else if (genero === 6 && pelicula === 8) {
+                alienromulus.hidden = true
+                intensamentedos.hidden = true
+                spidermanacrossthespideruniverse.hidden = true
+                iamstilljk.hidden = true
+                deadpoolywolverine.hidden = true
+                avatarelsentidodelagua.hidden = true
+                killmasacreeneltren.hidden = true
+            }
+            return
+        }
+
+        // capturo el boton para filtrar
+        const btnFiltro = document.getElementById('btn-filtro-personalizado')
+        console.log(btnFiltro)
+        btnFiltro.addEventListener('click', function() {
+            filtrar()
+        }) // Le agrego un evento que ejecuta una función llamda filtrar() cuando se hace click en el botón
+
+
+
+
+
+
+
         const carrusel = document.querySelector('.carrusel'); //selecciono el elemento con clase "carrusel"
         const imagenes = carrusel.querySelectorAll('img'); //selecciona todos los elementos 'img' en el carrusel
         const puntos = document.querySelectorAll('.punto'); //selecciona todos los elementos con clase "punto"
@@ -180,7 +370,7 @@
 
         function iniciarCarrusel ()
         {
-            setInterval (pasarSiguiente, 4000); //llamo a la función 'pasarSiguiente' cada 5 segundos para que cambien las imágenes
+            setInterval (pasarSiguiente, 4000); //llamo a la función 'pasarSiguiente' cada 4 segundos para que cambien las imágenes
         }
 
         for (let i = 0; i < puntos.length; i++) //agrego un click para c/punto
@@ -196,6 +386,9 @@
         //iniciamos el carrusel y se muestra la primer imágen
         iniciarCarrusel();
         mostrarImagenActual();
+
+
+        
 
     </script>
     

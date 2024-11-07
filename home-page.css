@@ -24,8 +24,6 @@
     src: url(fuentes/Montserrat-Bold.ttf);
 }
 
-
-
 body 
 {
     margin: 0 auto;
@@ -33,6 +31,9 @@ body
     background-color: #1D1D23;
     
 }
+
+
+
 
 
 #pagina
@@ -86,6 +87,51 @@ body
     font-size: 18px;
 }
 
+.carrusel
+{
+    position: relative;
+    overflow: hidden;
+    width: 100;
+    height: auto;
+    margin: 0 auto;
+}
+
+.carrusel img
+{
+    width: 1100px;
+    height: auto;
+    display: block;
+    transition: transform 5s;
+    margin: 0 auto;
+}
+
+.carrusel img:first-child
+{
+    display: block;
+}
+
+.puntos
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.punto
+{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.punto.active
+{
+    background-color: #EF233C;
+}
+
 #buscar 
 {
     width: 100%;
@@ -96,6 +142,19 @@ body
     font-family: "Montserrat-Regular";
     font-size: 18px;
     color: #ffffff;
+}
+
+.btn-buscar{
+    font-family: 'Montserrat-Medium';
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.btn-buscar:hover{
+    background-color: #EF233C;
+    color: #FFFFFF;
 }
 
 
@@ -116,8 +175,6 @@ body
     border-radius: 15px;
     cursor: pointer;
     padding-bottom: 10px;
-    text-decoration: none;
-    color: black;
 }
 
 .card-pelicula:hover{
@@ -178,18 +235,90 @@ body
 }
 
 
+
+    .contenedor-boton-filtro{
+        text-align: center;
+        width: 100%;
+    }
+
+    #btn-filtro-personalizado 
+    {
+        padding: 1%;
+        font-family: 'Montserrat-Bold';
+        background-color: white;
+        border-radius: 10px;
+        border: 5px solid #ef233c;
+        cursor: pointer;
+        font-size: 20px;
+        max-width: 500px; /* Establece un ancho máximo para el botón */
+        margin: 0 auto; /* Centra el botón horizontalmente */
+        white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+        
+    }
+
+    #btn-filtro-personalizado:hover{
+        background-color: #ef233c;
+        border: 5px solid white;
+        color: white;
+    }
+
+
 @media (max-width: 700px) {
+
+    .logo{
+        height: 70px;
+        width: 70px;
+    }
+
+    .encabezado 
+    {
+        display: grid;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+    }
 
     .botones{
         display: flex;
-        flex-direction: column;
         gap: 5px;
-        margin-left: 20px;
-        font-size: medium;
+        margin-left: 0;
+        justify-content: center;
     }
 
-    #footer {
-        width: 95%;
-        margin-top: 50%;
+    .botones a{
+        font-size: small;
+        font-weight: bold;
+        padding: 2px;
+        background-color: white;
+        color: black;
+        border-radius: 5px;
+    }
+
+    
+    #btn-filtro-personalizado {
+        font-size: small;
+    }
+
+    .carrusel img
+    {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 5s;
+        margin: 0 auto;
+    }
+
+    .contenedor-cards-peliculas {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 20px;
+    }
+
+    #alienromulus, #spidermanacrossthespideruniverse, #deadpoolywolverine, #romperelcirculo, #intensamentedos, #iamstilljk, #avatarelsentidodelagua, #killmasacreeneltren{
+        grid-column: 1;
+    }
+
+    .card-pelicula{
+        width: 20em;
     }
 }

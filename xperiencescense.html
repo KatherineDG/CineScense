@@ -3,8 +3,10 @@
 
 <head>
     <link rel="StyleSheet" href="xperiencescense.css" type="text/css">
+    <link rel="StyleSheet" href="home-page.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -31,31 +33,37 @@
 
 
         <div id="sala">
+            <div class="titulo-salasA"> 
+                <h1>2D</h1> 
+            </div>
             <div class="tiposalaA">
-                <a href="./imagenes/sala2d.png"> <img src="./imagenes/sala2d.png"> </a>
-                <h1>2D</h1>
-                <p> Cuentan con dos opciones. La normal tiene asientos amplios y ergonómicos dispuestos en filas con buena visibilidad de la pantalla. La opción Lux
+                <a href="./imagenes/sala2d.png" id="sala2d"> <img class="img-sala" src="./imagenes/sala2d.png"> </a>
+                <p class="ocultar"> Cuentan con dos opciones. La normal tiene asientos amplios y ergonómicos dispuestos en filas con buena visibilidad de la pantalla. La opción Lux
                 ofrece asientos reclinables, tapizados en material de alta calidad, 
                 con reposapiés y portavasos integrados. Además, hay mesas con lámparas 
                 suaves al lado de cada fila, y el sistema de sonido es de última tecnología 
                 para una experiencia más inmersiva. </p>
             </div>
 
+            <div class="titulo-salasB"> 
+                <h1>3D</h1> 
+            </div>
             <div class="tiposalaB">
-                <h1>3D</h1>
-                <p> Las salas 3D equipadas con pantallas grandes y sistemas de proyección 
+                <p class="ocultar"> Las salas 3D equipadas con pantallas grandes y sistemas de proyección 
                     especializados que crean una experiencia visual tridimensional. 
                     Los espectadores usan gafas 3D para ver el contenido con profundidad, 
                     mientras que el sonido envolvente completa la inmersión. Estas salas 
                     ofrecen una experiencia cinematográfica más inmersiva y realista.
                 </p>
-                <a href="./imagenes/sala3d.png"> <img src="./imagenes/sala3d.png"> </a>
+                <a href="./imagenes/sala3d.png" id="sala3d"> <img src="./imagenes/sala3d.png"> </a>
             </div>
 
+            <div class="titulo-salasA"> 
+                <h1>4D</h1> 
+            </div>
             <div class="tiposalaA">
-                <a href="./imagenes/sala4d.png"> <img src="./imagenes/sala4d.png"> </a>
-                <h1>4D</h1>
-                <p> Las salas 4D ofrecen una experiencia inmersiva al combinar 
+                <a href="./imagenes/sala4d.png" id="sala4d"> <img src="./imagenes/sala4d.png"> </a>
+                <p class="ocultar"> Las salas 4D ofrecen una experiencia inmersiva al combinar 
                     proyección 3D con efectos físicos sincronizados, como movimiento de 
                     asientos, vibraciones, viento, agua y olores. Esta tecnología intensifica 
                     la experiencia visual y auditiva, haciendo que el espectador sienta que 
@@ -63,15 +71,17 @@
                 </p>
             </div>
 
+            <div class="titulo-salasB"> 
+                <h1>5D</h1> 
+            </div>
             <div class="tiposalaB">
-                <h1>5D</h1>
-                <p> Las salas de cine 5D ofrecen una experiencia inmersiva al combinar 
+                <p class="ocultar"> Las salas de cine 5D ofrecen una experiencia inmersiva al combinar 
                     proyección 3D con efectos 4D como movimiento de asientos, viento y 
                     vibraciones, además de cambios de temperatura y olores. La pantalla, 
                     que se extiende hasta el techo, envuelve a los espectadores en una 
                     experiencia multisensorial completa y envolvente.
                 </p>
-                <a href="./imagenes/sala5d.png"> <img src="./imagenes/sala5d.png"> </a>
+                <a href="./imagenes/sala5d.png" id="sala5d"> <img src="./imagenes/sala5d.png"> </a>
             </div>
 
         </div>
@@ -111,3 +121,46 @@
         </div>
 
     </div>
+
+    <script language="javascript">
+    
+    $(".titulo-salasA h1, .titulo-salasB h1").click(function() // selecciono los elementos h1 dentro de los contenedores .titulo-salasA 
+    //y .titulo-salasB para asignara los mismos un evento de clic.
+
+    {
+        var tipoSala = $(this).parent().next(); // selecciono el contenedor padre del título (.titulo-salasA o .titulo-salasB) 
+        // y busco el elemento siguiente (.tiposalaA o .tiposalaB).
+
+        var texto = tipoSala.find("p");
+        var imagen = tipoSala.find("img");
+        
+        if (texto.is(":visible"))// si el texto está visible, se oculta y vuelve a centrar la imagen
+        { 
+            texto.slideUp(); //se oculta el texto utilizando slideUp
+            imagen.animate({ 
+                transform: "translateX(0)" 
+            }, 500); // duración de la animación: 500ms o 5 segundos
+        } 
+        else
+         { // si el texto no está visible, se muestra y mueve la imagen hacia la derecha o izquierda dependiendo del tiposala
+            if (tipoSala.hasClass("tiposalaA")) {
+                imagen.animate({ 
+                    transform: "translateX(-50%)"  //si es .tiposalaA, se mueve la imagen hacia la izquierda
+                }, 500);
+            } 
+            else if (tipoSala.hasClass("tiposalaB")) 
+            {
+                imagen.animate({ 
+                    transform: "translateX(50%)" //si es .tiposalaB, se mueve la imagen hacia la derecha
+                }, 500); // duración de la animación: 500ms o 5 segundos
+            }
+            texto.slideDown();
+        }
+    });
+
+
+
+
+    </script>
+
+</body>
