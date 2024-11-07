@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="carteleraStyles.css">
     <link rel="stylesheet" href="home-page.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>CineScense</title>
 </head>
 
@@ -41,11 +42,10 @@
                 <div class="pelicula-buscar">
                     <label>Película</label>
                     <input type="text">
-                    <button class="btn-buscar" type="button">Buscar</button>
                 </div>
                 <div>
                     <label>Género</label>
-                    <select>
+                    <select name="generoSelect">
                         <option>Acción</option>
                         <option>Animación</option>
                         <option>Fantasía</option>
@@ -53,11 +53,10 @@
                         <option>Realista</option>
                     </select>
                 </div>
+                <button class="btn-buscar" type="button">Buscar</button>
             </form>
         </div>
-        <div class="contenedor-boton-filtro">
-            <button id="btn-filtro-personalizado">Filtrá de forma más personalizada y rápida</button>
-        </div>
+        
         <div class="contenedor-titulo-cartelera">
             <h1>CARTELERA</h1>
             <h2>¡No te pierdas los <font class="deco-subtitulo-cartelera">estrenos</font> más esperados!</h2>
@@ -69,7 +68,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">ALIEN ROMULUS</p>
                     <p class="dato-pelicula">Duración: 120 minutos</p>
-                    <p class="dato-pelicula">Género: terror</p>
+                    <p class="dato-pelicula genero">Género: terror</p>
                     <p class="dato-pelicula">Salas: 2D - 3D - 4D - 5D</p>
                 </div>
             </a>
@@ -79,7 +78,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">INTENSAMENTE 2</p>
                     <p class="dato-pelicula">Duración: 96 minutos</p>
-                    <p class="dato-pelicula">Género: animación</p>
+                    <p class="dato-pelicula genero">Género: animación</p>
                     <p class="dato-pelicula">Salas: 2D - 3D</p>
                 </div>
             </a>
@@ -89,7 +88,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">SPIDER-MAN: ATSV</p>
                     <p class="dato-pelicula">Duración: 140 minutos</p>
-                    <p class="dato-pelicula">Género: animación</p>
+                    <p class="dato-pelicula genero">Género: animación</p>
                     <p class="dato-pelicula">Salas: 2D - 3D - 4D</p>
                 </div>
             </a>
@@ -99,7 +98,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">JUNG KOOK: I AM STILL</p>
                     <p class="dato-pelicula">Duración: 93 minutos</p>
-                    <p class="dato-pelicula">Género: realista</p>
+                    <p class="dato-pelicula genero">Género: realista</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
             </a>
@@ -109,7 +108,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">DEADPOOL & WOLVERINE</p>
                     <p class="dato-pelicula">Duración: 127 minutos</p>
-                    <p class="dato-pelicula">Género: accion</p>
+                    <p class="dato-pelicula genero">Género: accion</p>
                     <p class="dato-pelicula">Salas: 2D - 3D</p>
                 </div>
             </a>
@@ -119,7 +118,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">AVATAR 2</p>
                     <p class="dato-pelicula">Duración: 192 minutos</p>
-                    <p class="dato-pelicula">Género: fantasia</p>
+                    <p class="dato-pelicula genero">Género: fantasia</p>
                     <p class="dato-pelicula">Salas: 2D - 3D - 4D - 5D</p>
                 </div>
             </a>
@@ -130,7 +129,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">ROMPER EL CIRCULO</p>
                     <p class="dato-pelicula">Duración: 130 minutos</p>
-                    <p class="dato-pelicula">Género: drama</p>
+                    <p class="dato-pelicula genero">Género: drama</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
             </a>
@@ -141,7 +140,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">KILL MASACRE EN EL TREN</p>
                     <p class="dato-pelicula">Duración: 115 minutos</p>
-                    <p class="dato-pelicula">Género: acción</p>
+                    <p class="dato-pelicula genero">Género: acción</p>
                     <p class="dato-pelicula">Salas: 2D</p>
                 </div>
             </a>
@@ -187,159 +186,37 @@
     </div>
 
     <script>
+        $(document).ready(function() {
+            $('.btn-buscar').click(function() {
 
-        function filtrar() {
-            lugar = parseInt(prompt("Ingresa el número de la sede del cine: \n 1. Av. Lima \n 2. Av. Independencia \n 3. Av. Salta \n 4. Av. Chile"))
+                let genero = $('select[name="generoSelect"]').val().toLocaleLowerCase(); //tengo el valor
+                let pelicula = $('input[type="text"]').val().toLowerCase(); //lo pongo para que no sea sensible al tipo de letra
 
-            switch (true) {
-                case (lugar === 1): { //Terror
-                    break;
-                }
-                case (lugar === 2): { //Animacion
-                    break;
-                }
-                case (lugar === 3): { //Realista
-                    break;
-                }
-                case (lugar === 4): { //Accion
-                    break;
-                }
-                default: {
-                    alert("Ingreso erróneo, vuelva a intentarlo")
-                    return
-                }
-            }
-            
-            genero = parseInt(prompt("Ingresá el número del género que te interese: \n 1. Terror \n 2. Animación \n 3. Realista \n 4. Acción \n 5. Fantasía \n 6. Drama"))
+                console.log(genero);
 
-            switch (true) {
-                case (genero === 1): { //Terror
-                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de terror que querés ver: \n 1. Alien Romulus"))
-                    break;
-                }
-                case (genero === 2): { //Animacion
-                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de animación que querés ver: \n 2. Intesamente 2 \n 3. Spider Man ATSV"))
-                    break;
-                }
-                case (genero === 3): { //Realista
-                    pelicula = parseInt(prompt("Ingresa el número de la pelicula realista que querés ver: \n 4. I still you JK"))
-                    break;
-                }
-                case (genero === 4): { //Accion
-                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de acción que querés ver: \n 5. Deadpool & Wolverine \n 6. Kill Masacre en el tren"))
-                    break;
-                }
-                case (genero === 5): { //Fantasia
-                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de fantasía que querés ver: \n 7. Avatar 2"))
-                    break;
-                }
-                case (genero === 6): { //Drama
-                    pelicula = parseInt(prompt("Ingresa el número de la pelicula de drama que querés ver: \n 8. Romper el círculo"))
-                    break;
-                }
-                default: {
-                    alert("Ingreso erróneo, vuelva a intentarlo")
-                    return;
-                }
-            }
- 
-            // Peliculas
-            const alienromulus = document.getElementById('alienromulus')
-            const intensamentedos = document.getElementById('intensamentedos')
-            const spidermanacrossthespideruniverse = document.getElementById('spidermanacrossthespideruniverse')
-            const iamstilljk = document.getElementById('iamstilljk')
-            const deadpoolywolverine = document.getElementById('deadpoolywolverine')
-            const avatarelsentidodelagua = document.getElementById('avatarelsentidodelagua')
-            const romperelcirculo = document.getElementById('romperelcirculo')
-            const killmasacreeneltren = document.getElementById('killmasacreeneltren')
+                $('.card-pelicula').hide(); //escondo todas las cards
 
-            // Dependiendo las elecciones escondo las peliculas que no se eligieron (hidden = true)
-            if (genero === 1 && pelicula === 1) {
-                intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
-                iamstilljk.hidden = true
-                deadpoolywolverine.hidden = true
-                avatarelsentidodelagua.hidden = true
-                romperelcirculo.hidden = true
-                killmasacreeneltren.hidden = true
-            }
-            else if (genero === 2) {
-                if (pelicula === 2) {
-                    alienromulus.hidden = true
-                    spidermanacrossthespideruniverse.hidden = true
-                    iamstilljk.hidden = true
-                    deadpoolywolverine.hidden = true
-                    avatarelsentidodelagua.hidden = true
-                    romperelcirculo.hidden = true
-                    killmasacreeneltren.hidden = true
-                }
-                else if (pelicula === 3) {
-                    alienromulus.hidden = true
-                    intensamentedos.hidden = true
-                    iamstilljk.hidden = true
-                    deadpoolywolverine.hidden = true
-                    avatarelsentidodelagua.hidden = true
-                    romperelcirculo.hidden = true
-                    killmasacreeneltren.hidden = true
-                }
-            }
-            else if (genero === 3 && pelicula === 4) {
-                alienromulus.hidden = true
-                intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
-                deadpoolywolverine.hidden = true
-                avatarelsentidodelagua.hidden = true
-                romperelcirculo.hidden = true
-                killmasacreeneltren.hidden = true
-            }
-            else if (genero === 4) {
-                if (pelicula === 5) {
-                    alienromulus.hidden = true
-                    intensamentedos.hidden = true
-                    spidermanacrossthespideruniverse.hidden = true
-                    iamstilljk.hidden = true
-                    avatarelsentidodelagua.hidden = true
-                    romperelcirculo.hidden = true
-                    killmasacreeneltren.hidden = true
-                }
-                else if (pelicula === 6) {
-                    alienromulus.hidden = true
-                    intensamentedos.hidden = true
-                    spidermanacrossthespideruniverse.hidden = true
-                    iamstilljk.hidden = true
-                    deadpoolywolverine.hidden = true
-                    avatarelsentidodelagua.hidden = true
-                    romperelcirculo.hidden = true
-                }
-            }
-            else if (genero === 5 && pelicula === 7) {
-                alienromulus.hidden = true
-                intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
-                iamstilljk.hidden = true
-                deadpoolywolverine.hidden = true
-                romperelcirculo.hidden = true
-                killmasacreeneltren.hidden = true
-            }
-            else if (genero === 6 && pelicula === 8) {
-                alienromulus.hidden = true
-                intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
-                iamstilljk.hidden = true
-                deadpoolywolverine.hidden = true
-                avatarelsentidodelagua.hidden = true
-                killmasacreeneltren.hidden = true
-            }
-            return
-        }
+                //es una lista de las cards que cumplirian con el filtro
+                let conicidencias = $('.card-pelicula').filter(function() {
+                    let tarjetaGenero = $(this).find('.genero').text().split(': ')[1].toLocaleLowerCase();
+                    let tarjetaTitulo = $(this).find('.titulo-pelicula').text().toLowerCase();
 
-        // capturo el boton para filtrar
-        const btnFiltro = document.getElementById('btn-filtro-personalizado')
-        console.log(btnFiltro)
-        btnFiltro.addEventListener('click', function() {
-            filtrar()
-        }) // Le agrego un evento que ejecuta una función llamda filtrar() cuando se hace click en el botón
+                    console.log(tarjetaGenero);
+                    console.log(tarjetaTitulo);
 
+                    //las cosas seleccionadas en el filtro, coinciden con algunas cards de pelicula?
+                    let generoCoincide = genero ? tarjetaGenero.includes(genero) : true;
+                    let peliculaCoincide = pelicula ? tarjetaTitulo.includes(pelicula) : true;
+
+                    return generoCoincide && peliculaCoincide;
+                }).show(); //mostrar las peliculas que se filtraron
+
+                if (conicidencias.length === 0) {
+                    alert('No se encontraron peliculas con esos filtros');
+                    $('.card-pelicula').show();
+                }
+            });
+        });
     </script>
 </body>
 
