@@ -165,14 +165,6 @@
 
     <script language="javascript">
 
-        const cards = document.querySelectorAll('.contenedor-cards-peliculas .card-pelicula');
-        for (var i=0; i<cards.length; i++)
-    {
-        if (i>=4)
-    {
-        cards[i].style.display='none';
-    }
-    }
 
     function filtrar() {
             lugar = parseInt(prompt("Ingresa el número de la sede del cine: \n 1. Av. Lima \n 2. Av. Independencia \n 3. Av. Salta \n 4. Av. Chile"))
@@ -242,82 +234,71 @@
             // Dependiendo las elecciones escondo las peliculas que no se eligieron (hidden = true)
             if (genero === 1 && pelicula === 1) {
                 intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
                 iamstilljk.hidden = true
-                deadpoolywolverine.hidden = true
-                avatarelsentidodelagua.hidden = true
                 romperelcirculo.hidden = true
-                killmasacreeneltren.hidden = true
+
             }
             else if (genero === 2) {
                 if (pelicula === 2) {
                     alienromulus.hidden = true
-                    spidermanacrossthespideruniverse.hidden = true
                     iamstilljk.hidden = true
-                    deadpoolywolverine.hidden = true
-                    avatarelsentidodelagua.hidden = true
                     romperelcirculo.hidden = true
-                    killmasacreeneltren.hidden = true
+                    intensamentedos.hidden = false
                 }
                 else if (pelicula === 3) {
                     alienromulus.hidden = true
                     intensamentedos.hidden = true
                     iamstilljk.hidden = true
-                    deadpoolywolverine.hidden = true
-                    avatarelsentidodelagua.hidden = true
                     romperelcirculo.hidden = true
-                    killmasacreeneltren.hidden = true
+                    spidermanacrossthespideruniverse.hidden = false
                 }
             }
             else if (genero === 3 && pelicula === 4) {
                 alienromulus.hidden = true
                 intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
-                deadpoolywolverine.hidden = true
-                avatarelsentidodelagua.hidden = true
                 romperelcirculo.hidden = true
-                killmasacreeneltren.hidden = true
             }
             else if (genero === 4) {
                 if (pelicula === 5) {
                     alienromulus.hidden = true
                     intensamentedos.hidden = true
-                    spidermanacrossthespideruniverse.hidden = true
                     iamstilljk.hidden = true
-                    avatarelsentidodelagua.hidden = true
                     romperelcirculo.hidden = true
-                    killmasacreeneltren.hidden = true
+                    deadpoolywolverine.hidden = false
                 }
                 else if (pelicula === 6) {
                     alienromulus.hidden = true
                     intensamentedos.hidden = true
-                    spidermanacrossthespideruniverse.hidden = true
                     iamstilljk.hidden = true
-                    deadpoolywolverine.hidden = true
-                    avatarelsentidodelagua.hidden = true
                     romperelcirculo.hidden = true
+                    killmasacreeneltren.hidden = false
                 }
             }
             else if (genero === 5 && pelicula === 7) {
                 alienromulus.hidden = true
                 intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
                 iamstilljk.hidden = true
-                deadpoolywolverine.hidden = true
                 romperelcirculo.hidden = true
-                killmasacreeneltren.hidden = true
+                avatarelsentidodelagua.hidden = false
             }
             else if (genero === 6 && pelicula === 8) {
                 alienromulus.hidden = true
                 intensamentedos.hidden = true
-                spidermanacrossthespideruniverse.hidden = true
                 iamstilljk.hidden = true
-                deadpoolywolverine.hidden = true
-                avatarelsentidodelagua.hidden = true
-                killmasacreeneltren.hidden = true
             }
             return
         }
+
+        const alienromulus = document.getElementById('alienromulus')
+        const intensamentedos = document.getElementById('intensamentedos')
+        const spidermanacrossthespideruniverse = document.getElementById('spidermanacrossthespideruniverse').hidden = true
+        const iamstilljk = document.getElementById('iamstilljk')
+        const deadpoolywolverine = document.getElementById('deadpoolywolverine').hidden = true
+        const avatarelsentidodelagua = document.getElementById('avatarelsentidodelagua').hidden = true
+        const romperelcirculo = document.getElementById('romperelcirculo')
+        const killmasacreeneltren = document.getElementById('killmasacreeneltren').hidden = true
+
+
 
         // capturo el boton para filtrar
         const btnFiltro = document.getElementById('btn-filtro-personalizado')
@@ -325,10 +306,6 @@
         btnFiltro.addEventListener('click', function() {
             filtrar()
         }) // Le agrego un evento que ejecuta una función llamda filtrar() cuando se hace click en el botón
-
-
-
-
 
 
 
