@@ -165,7 +165,7 @@ body
     align-items: center;
     display: grid;
     grid-template-columns: repeat(4, 10fr);
-    gap: 3%;
+    gap: 1%;
     margin-top: 20px;
 }
 
@@ -217,8 +217,7 @@ body
 
 
 
-#footer
-{
+#footer{
     width: 100%;
     background-color: #ef233c;
     border: 2px solid #ffffff;
@@ -320,5 +319,9 @@ body
 
     .card-pelicula{
         width: 20em;
+    }
+
+    #footer{
+        margin-top: 350px;
     }
 }
