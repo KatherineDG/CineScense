@@ -249,4 +249,8 @@ main{
         width: 20em;
     }
 
+    #footer{
+        margin-top: 350px;
+    }
+
 }

@@ -217,7 +217,7 @@ body
 
 
 
-#footer{
+#footer2{
     width: 100%;
     background-color: #ef233c;
     border: 2px solid #ffffff;
@@ -235,31 +235,33 @@ body
 
 
 
-    .contenedor-boton-filtro{
+.contenedor-boton-filtro
+{
         text-align: center;
         width: 100%;
-    }
+}
 
-    #btn-filtro-personalizado 
-    {
-        padding: 1%;
-        font-family: 'Montserrat-Bold';
-        background-color: white;
-        border-radius: 10px;
-        border: 5px solid #ef233c;
-        cursor: pointer;
-        font-size: 20px;
-        max-width: 500px; /* Establece un ancho máximo para el botón */
-        margin: 0 auto; /* Centra el botón horizontalmente */
-        white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+
+#btn-filtro-personalizado 
+{
+    padding: 1%;
+    font-family: 'Montserrat-Bold';
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid #ef233c;
+    cursor: pointer;
+    font-size: 20px;
+    max-width: 500px; /* Establece un ancho máximo para el botón */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
         
-    }
+}
 
-    #btn-filtro-personalizado:hover{
-        background-color: #ef233c;
-        border: 5px solid white;
-        color: white;
-    }
+#btn-filtro-personalizado:hover{
+    background-color: #ef233c;
+    border: 5px solid white;
+    color: white;
+}
 
 
 @media (max-width: 700px) {
@@ -321,7 +323,7 @@ body
         width: 20em;
     }
 
-    #footer{
-        margin-top: 350px;
+    #footer2{
+        margin-top: 100px;
     }
 }

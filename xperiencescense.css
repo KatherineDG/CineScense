@@ -172,34 +172,64 @@ body
 
 .titulo-salasA
 {
+    display: flex;
     width: 100%;
     height: auto;
     font-size: 25px;
     background-color: #ef233c;
     align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     color: #ffffff;
     font-family: "Montserrat-Regular";
     margin-bottom: 0;
     margin-top: 20px;
+    padding-top: 5px;
     overflow: hidden;
+}
+
+.titulo-salasA h1
+{
+    background-color: black;
+    width: 10%;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .titulo-salasB
 {
+    display: flex;
     width: 100%;
     height: auto;
     font-size: 25px;
     background-color: #FFFFFF;
     align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     color: #1D1D23;
     font-family: "Montserrat-Regular";
     margin-bottom: 0;
     margin-top: 20px;
+    padding-top: 5px;
 }
+
+
+.titulo-salasB h1
+{
+    background-color: #ef233c;
+    width: 10%;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
 
 .tiposalaA, .tiposalaB
 {
@@ -221,7 +251,7 @@ body
 
 
 
-#footer
+#footer2
 {
     width: 100%;
     background-color: #ef233c;
@@ -266,5 +296,13 @@ body
 
     .ocultar{
         width: 50vh;
+    }
+
+    .titulo-salasA h1, .titulo-salasB h1  
+    {
+        width: 30%;
+    }
+    #footer2{
+        margin-top: 100px;
     }
 }

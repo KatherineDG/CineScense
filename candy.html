@@ -21,7 +21,7 @@
                 <a href="home-page.html"> Home </a>
                 <a href="cartelera.html"> Cartelera </a>
                 <a href="candy.html"> Candy </a>
-                <a href="promociones.html"> Promociones </a>
+                <a href="promociones.html"> Promos </a>
                 <a href="xperiencescense.html"> XperienceScense </a>
 
             </div>
@@ -207,7 +207,8 @@
         var carrito = []; //creo un carrito vacío para almacenar los productos 
         var botonCarrito = document.getElementsByClassName('agregar-carrito'); //botones que permiten agregar productos al carrito
         var margenCandy = 90;
-
+        var widthPantalla = $(window).width(); //obtengo el ancho de la pantalla
+        console.log(widthPantalla)
         for (var i = 0; i < botonCarrito.length; i++) //inicio un bucle for para iterar sobre cada botón con la clase agregar-carrito
         {
             botonCarrito[i].addEventListener('click', function(event) //agrego un evento click a cada botón, para agregar el producto al carrito
@@ -228,8 +229,12 @@
             console.log(carrito)
             
             const contenedorBebidas = document.getElementById('bebidas');
-            margenCandy = margenCandy + 90;
-            contenedorBebidas.style.marginTop = margenCandy + 'px'
+
+            if (widthPantalla <= 700){
+                margenCandy = margenCandy + 45;
+                contenedorBebidas.style.marginTop = margenCandy + 'px';
+            }
+            
 
             actualizarCarrito(); //llamo a la función actualizarCarrito para mostrar los cambios en el carrito
         }
