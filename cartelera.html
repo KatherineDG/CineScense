@@ -46,11 +46,13 @@
                 <div>
                     <label>Género</label>
                     <select name="generoSelect">
+                        <option>-nada-</option>
                         <option>Acción</option>
                         <option>Animación</option>
                         <option>Fantasía</option>
                         <option>Terror</option>
                         <option>Realista</option>
+                        <option>Drama</option>
                     </select>
                 </div>
                 <button class="btn-buscar" type="button">Buscar</button>
@@ -108,7 +110,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">DEADPOOL & WOLVERINE</p>
                     <p class="dato-pelicula">Duración: 127 minutos</p>
-                    <p class="dato-pelicula genero">Género: accion</p>
+                    <p class="dato-pelicula genero">Género: acción</p>
                     <p class="dato-pelicula">Salas: 2D - 3D</p>
                 </div>
             </a>
@@ -118,7 +120,7 @@
                 <div class="contenedor-info-pelicula">
                     <p class="titulo-pelicula">AVATAR 2</p>
                     <p class="dato-pelicula">Duración: 192 minutos</p>
-                    <p class="dato-pelicula genero">Género: fantasia</p>
+                    <p class="dato-pelicula genero">Género: fantasía</p>
                     <p class="dato-pelicula">Salas: 2D - 3D - 4D - 5D</p>
                 </div>
             </a>
@@ -188,35 +190,34 @@
     <script>
         $(document).ready(function() {
             $('.btn-buscar').click(function() {
-
-                let genero = $('select[name="generoSelect"]').val().toLocaleLowerCase(); //tengo el valor
-                let pelicula = $('input[type="text"]').val().toLowerCase(); //lo pongo para que no sea sensible al tipo de letra
-
-                console.log(genero);
-
-                $('.card-pelicula').hide(); //escondo todas las cards
-
-                //es una lista de las cards que cumplirian con el filtro
-                let conicidencias = $('.card-pelicula').filter(function() {
-                    let tarjetaGenero = $(this).find('.genero').text().split(': ')[1].toLocaleLowerCase();
-                    let tarjetaTitulo = $(this).find('.titulo-pelicula').text().toLowerCase();
-
-                    console.log(tarjetaGenero);
-                    console.log(tarjetaTitulo);
-
-                    //las cosas seleccionadas en el filtro, coinciden con algunas cards de pelicula?
-                    let generoCoincide = genero ? tarjetaGenero.includes(genero) : true;
-                    let peliculaCoincide = pelicula ? tarjetaTitulo.includes(pelicula) : true;
-
-                    return generoCoincide && peliculaCoincide;
-                }).show(); //mostrar las peliculas que se filtraron
-
-                if (conicidencias.length === 0) {
-                    alert('No se encontraron peliculas con esos filtros');
-                    $('.card-pelicula').show();
+                let genero = $('select[name="generoSelect"]').val().toLocaleLowerCase();
+                let pelicula = $('input[type="text"]').val().toLowerCase();
+                
+                $('.card-pelicula').hide();
+                
+                if (genero === "-nada-") {
+                    let coincidencias = $('.card-pelicula').filter(function() {
+                        let tarjetaTitulo = $(this).find('.titulo-pelicula').text().toLowerCase();
+                        return tarjetaTitulo.includes(pelicula);
+                    }).show();
+                } else {
+                    let coincidencias = $('.card-pelicula').filter(function() {
+                        let tarjetaGenero = $(this).find('.genero').text().split(': ')[1].toLocaleLowerCase();
+                        let tarjetaTitulo = $(this).find('.titulo-pelicula').text().toLowerCase();
+                        let generoCoincide = tarjetaGenero.includes(genero);
+                        let peliculaCoincide = tarjetaTitulo.includes(pelicula);
+                        return generoCoincide && peliculaCoincide;
+                    }).show();
+                }
+                if ($('.card-pelicula:visible').length === 0) {
+                    alert('No se encontraron películas con esos filtros');
                 }
             });
-        });
+
+        })
+
+
+
     </script>
 </body>
 
